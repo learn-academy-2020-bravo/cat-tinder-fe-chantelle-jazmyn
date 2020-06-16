@@ -1,23 +1,21 @@
 import React from 'react'
-import { ListGroup, ListGroupItem } from 'reactstrap';
+import { ListGroup, ListGroupItem, ListGroupItemText, ListGroupItemHeading } from 'reactstrap';
 
 
-const DogIndex = () => {
+const DogIndex = (props) => {
     return(
         <>
-        <ListGroup >
-        {this.props.dogs.map((dog, index) => {
-            return(
-                <ListGroupItem key= { index }>
-                    <h4> { dog.name } </h4>
-                    <p>Age: { dog.age }</p>
-                    <p>Enjoys: { dog.enjoys }</p>
-                </ListGroupItem>
-
-            )
-        })}
-        </ListGroup>
-        
+          <ListGroup >
+            { props.dogs.map((dog, index) => {
+                return(
+                    <ListGroupItem key= { index }>
+                        <ListGroupItemHeading> { dog.name } </ListGroupItemHeading>
+                        <ListGroupItemText>Age: { dog.age }</ListGroupItemText>
+                        <ListGroupItemText>Enjoys: { dog.enjoys }</ListGroupItemText>
+                    </ListGroupItem>
+                )
+            })}
+          </ListGroup>
         </>
     )
 }
