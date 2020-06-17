@@ -5,8 +5,9 @@ import { ListGroup, ListGroupItem, ListGroupItemText, ListGroupItemHeading } fro
 const DogIndex = (props) => {
     return(
         <>
+        
           <ListGroup >
-            { props.dogs.map((dog, index) => {
+            { props.doggos && props.doggos.map((dog, index) => {
                 return(
                     <ListGroupItem key= { index }>
                         <ListGroupItemHeading> { dog.name } </ListGroupItemHeading>
@@ -16,6 +17,8 @@ const DogIndex = (props) => {
                 )
             })}
           </ListGroup>
+        
+          
         </>
     )
 }

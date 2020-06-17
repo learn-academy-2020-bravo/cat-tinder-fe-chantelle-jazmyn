@@ -16,7 +16,7 @@ const App = () => {
         <Header/>
         <Switch>
           <Route exact path="/"
-            render={ (props) => <DogIndex dogs={ allDogs } /> } />
+            render={ () => <DogIndex doggos={ allDogs } /> } />
         </Switch>
       </Router>
     )

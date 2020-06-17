@@ -6,7 +6,13 @@ import DogIndex from '../DogIndex'
 
 Enzyme.configure({ adapter: new Adapter() })
 
-it('DogIndex renders without crashing', () =>{
+it('renders without crashing', () =>{
     const div = document.createElement('div')
-    ReactDOM.render(<DogIndex/>, div)
+    ReactDOM.render(<DogIndex />, div)
+})
+
+it('renders the doggos', ()=>{
+    const component = mount(<DogIndex/>)
+    const headings = component.find('h5')
+    expect(headings.length).toBe(2)
 })
