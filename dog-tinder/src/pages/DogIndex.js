@@ -1,5 +1,5 @@
 import React from 'react'
-import { ListGroup, ListGroupItem, ListGroupItemText, ListGroupItemHeading } from 'reactstrap';
+import { ListGroup, ListGroupItem, ListGroupItemText, ListGroupItemHeading, Button } from 'reactstrap';
 
 
 const DogIndex = (props) => {
@@ -17,6 +17,8 @@ const DogIndex = (props) => {
                 )
             })}
           </ListGroup>
+          <Button className="btn btn-warning mb-2 float-right" href="/newdog">Add Some Doggos</Button>
+
         
           
         </>
