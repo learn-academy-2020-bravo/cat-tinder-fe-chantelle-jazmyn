@@ -8,6 +8,7 @@ import {
 import dogs from './dogs'
 import Header from './components/Header'
 import DogIndex from './pages/DogIndex'
+import DogIndex2 from './pages/DogIndex2'
 import NewDog from './pages/NewDog'
 import {Container} from 'reactstrap'
 
@@ -17,10 +18,11 @@ const App = () => {
     return (
       <Router>
         <Header/>
+        <DogIndex doggos={allDogs}/>
         <Container>
         <Switch>
           <Route exact path="/"
-            render={ () => <DogIndex doggos={ allDogs } /> } />
+            render={ () =>  <DogIndex2 doggos={allDogs}/> } />
           <Route exact path ="/newdog"
             render={ () => <NewDog/>}/>
         </Switch>

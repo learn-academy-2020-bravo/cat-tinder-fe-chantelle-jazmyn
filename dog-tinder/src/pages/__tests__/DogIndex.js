@@ -27,7 +27,7 @@ it('renders without crashing', () =>{
 })
 
 it('renders the doggos', ()=>{
-    const component = mount(<DogIndex dogs={ dogs } />)
-    // const headers = component.find('div')
-    expect(component.find('h5')).toBe(2)
+    const component = mount(<DogIndex doggos={ dogs } />)
+    const headers = component.find('span')
+    expect(headers.text()).toEqual('hello')
 })

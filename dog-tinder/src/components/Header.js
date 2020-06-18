@@ -6,10 +6,14 @@ const Header = () => {
     return(
         <>
         <Jumbotron fluid>
-            <Container fluid>
+            <Container className="puppylove">
+            <div className="logo">
+                <img src="../img/puppylovelogo.png" height="200px"/>
+            </div>
+            <div className="title">
             <h1 className="display-3">Puppy Love</h1>
             <p className="lead">Cuz who doesn't love puppies?</p>
-            </Container>
+            </div></Container>
         </Jumbotron>
         </>
     )

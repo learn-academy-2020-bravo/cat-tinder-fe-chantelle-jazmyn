@@ -13,10 +13,11 @@ const DogIndex = (props) => {
                         <ListGroupItemHeading> { dog.name } </ListGroupItemHeading>
                         <ListGroupItemText>Age: { dog.age }</ListGroupItemText>
                         <ListGroupItemText>Enjoys: { dog.enjoys }</ListGroupItemText>
-                    </ListGroupItem>
+                    </ListGroupItem> 
                 )
             })}
           </ListGroup>
+            <span>hello</span>
           <Button className="btn btn-warning mb-2 float-right" href="/newdog">Add Some Doggos</Button>
 
         

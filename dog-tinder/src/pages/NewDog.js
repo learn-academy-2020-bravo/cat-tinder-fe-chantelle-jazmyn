@@ -7,7 +7,8 @@ const NewDog = (props) => {
     const [form, setForm] = useState({
         name:'',
         age:'',
-        enjoys:''
+        enjoys:'',
+        img:''
     })
 
     const handleChange = (e) =>{
@@ -31,15 +32,19 @@ const NewDog = (props) => {
       <Form>
         <FormGroup>
           <Label htmlFor="name" id="name">Name</Label>
-          <Input type="text" name="name" placeholder="Minnie" onChange={ handleChange } value={ form.name }/>
+          <Input type="text" name="name" placeholder="name go here" onChange={ handleChange } value={ form.name }/>
         </FormGroup>
         <FormGroup>
           <Label htmlFor="age" id="age">Age</Label>
-          <Input type="number" name="age" placeholder="2" onChange={ handleChange } value={ form.age }/>
+          <Input type="number" name="age" placeholder="age go here" onChange={ handleChange } value={ form.age }/>
         </FormGroup>
         <FormGroup>
           <Label htmlFor="enjoys" id="enjoys">Enjoys</Label>
-          <Input type="text" name="enjoys" placeholder="Licking herself" onChange={ handleChange } value={ form.enjoys }/>
+          <Input type="text" name="enjoys" placeholder="tell me bout u" onChange={ handleChange } value={ form.enjoys }/>
+        </FormGroup>
+        <FormGroup>
+          <Label htmlFor="img" id="img">Image URL</Label>
+          <Input type="url" name="img" placeholder="" onChange={ handleChange } value={ form.img }/>
         </FormGroup>
         <Button name="submit" id="submit" onClick={ handleSubmit }>Submit</Button>
 
