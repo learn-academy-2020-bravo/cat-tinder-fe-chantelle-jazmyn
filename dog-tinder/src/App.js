@@ -18,11 +18,10 @@ const App = () => {
     return (
       <Router>
         <Header/>
-        <DogIndex doggos={allDogs}/>
         <Container>
         <Switch>
           <Route exact path="/"
-            render={ () =>  <DogIndex2 doggos={allDogs}/> } />
+            render={ () =>  <DogIndex /> } />
           <Route exact path ="/newdog"
             render={ () => <NewDog/>}/>
         </Switch>

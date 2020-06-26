@@ -1,8 +1,11 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+import { Redirect } from 'react-router-dom'
 
 
 const NewDog = (props) => {
+    const [success, setSuccess] = useState(false)
+    const [error, setError] = useState(false)
     const [dogs, setDogs] = useState([])
     const [form, setForm] = useState({
         name:'',
@@ -24,9 +27,21 @@ const NewDog = (props) => {
     }
 
     const pushDogs = (newdoggo) => {
-        console.log(newdoggo)
+      return fetch("http://localhost:3000/dogs", {
+        body: JSON.stringify(newdoggo),
+        headers: {
+          "Content-Type": "application/json"
+        },
+        method: "POST"
+      })
+      .then(response =>{
+        if (response.status === 200){
+          setSuccess(true)
+        } else {
+          setError(true)
+        }
+      })
     }
-
 
     return (
       <Form>
@@ -47,10 +62,11 @@ const NewDog = (props) => {
           <Input type="url" name="img" placeholder="" onChange={ handleChange } value={ form.img }/>
         </FormGroup>
         <Button name="submit" id="submit" onClick={ handleSubmit }>Submit</Button>
-
+        { success && <Redirect to = "/"/>}
+        { error && <p>There was an error, try again</p>}
 
       </Form>
     )
-} 
+}
 
 export default NewDog

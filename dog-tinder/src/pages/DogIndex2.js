@@ -11,19 +11,19 @@ import {
 const DogIndex2 = (props) => {
     const [activeIndex, setActiveIndex] = useState(0);
     const [animating, setAnimating] = useState(false);
-  
+
     const next = () => {
       if (animating) return;
       const nextIndex = activeIndex === props.doggos.length - 1 ? 0 : activeIndex + 1;
       setActiveIndex(nextIndex);
     }
-  
+
     const previous = () => {
       if (animating) return;
       const nextIndex = activeIndex === 0 ? props.doggos.length - 1 : activeIndex - 1;
       setActiveIndex(nextIndex);
     }
-  
+
     const goToIndex = (newIndex) => {
       if (animating) return;
       setActiveIndex(newIndex);
@@ -33,14 +33,14 @@ const DogIndex2 = (props) => {
           <CarouselItem
             onExiting={() => setAnimating(true)}
             onExited={() => setAnimating(false)}
-            key={item.src}
+            key={item.img}
           >
-            <img src={item.src} alt={item.altText} />
+            <img src={item.img} alt={item.altText} />
             <CarouselCaption captionText={item.enjoys} captionHeader={item.name} />
           </CarouselItem>
         );
       });
-    
+
     return (
     <>
         <Carousel
@@ -58,6 +58,6 @@ const DogIndex2 = (props) => {
     </>
     );
 }
-        
-          
+
+
 export default DogIndex2

@@ -14,13 +14,13 @@ p{
 }
 .carousel{
   background-color: #2a2e45;
-  
+
 }
 
-.carousel-item > img { 
-  height: 450px; 
+.carousel-item > img {
+  height: 450px;
   margin-left:auto;
-  margin-right:auto; 
+  margin-right:auto;
 }
 
 
@@ -29,7 +29,11 @@ p{
 }
 .jumbotron{
   background-color: #92DCE5 !important;
-  
+
+}
+
+.dogphoto{
+  height: 200px;
 }
 /*
 
